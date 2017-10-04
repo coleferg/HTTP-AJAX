@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getFriends, newFriend, updateFriend } from '../actions';
+import { getFriends, newFriend } from '../actions';
 import '../App.css';
 import Friend from './friend'
 
@@ -28,14 +28,6 @@ class FriendsList extends Component {
             })
     }
 
-    editFriend(index) {
-        this.props.updateFriend(this.state, index);
-        this.setState({
-            name: '',
-            age: 0,
-            email: '',
-            })
-    }
 
     handleName(event) {
         event.preventDefault()
@@ -61,7 +53,6 @@ class FriendsList extends Component {
                         return (
                             <div key={i} className="friend">
                                 <Friend key={i} friend={friend} index={i}/>
-                                <button className='edit' onClick={() => { return this.editFriend(i)}}>Edit Friend</button>
                             </div>
                         )
                     })}
@@ -86,4 +77,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { getFriends, newFriend, updateFriend })(FriendsList);
+export default connect(mapStateToProps, { getFriends, newFriend })(FriendsList);
