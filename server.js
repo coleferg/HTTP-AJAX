@@ -46,12 +46,15 @@ app.post('/new-friend', (req, res) => {
 });
 
 app.put('/update-friend', (req, res) => {
+	console.log(req.body)
 	const index = req.body.index;
 	friends[index] = req.body.update;
+	console.log(friends[index]);
 	res.send(friends);
 });
 
 app.delete('/delete-friend', (req, res) => {
+	console.log(req.body);
 	const index = req.body.index;
 	friends.splice(index, 1);
 	res.send(friends);
