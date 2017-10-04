@@ -101,39 +101,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { deleteFriend, updateFriend })(Friend);
-
-// let showHide = false;
-
-// const Friend = (props) => {
-//     const removeFriend = (i) => {
-//         console.log(i);
-//         props.deleteFriend(i)
-//     }
-
-//     const handleView = () => {
-//         console.log(showHide);
-//         showHide = !showHide;
-//     }
-
-//     console.log(props);
-//     const friend = props.friend;
-//     const number = props.index + 1;
-//     return (
-//         <div>
-//             <h3 onClick={() => handleView()}>{(number) + ". " + friend.name}</h3>
-//                 <div className={showHide ? 'shown' : 'hidden'}>
-//                     <p>Age: {friend.age}</p>
-//                     <p>Email: {friend.email}</p>
-//                     <button className='delete' onClick={() => { console.log(props.index); return removeFriend(props.index)}}>delete friend</button>
-//                 </div>
-//         </div>
-//     )
-// }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         friends: state.deleteFriend
-//     };
-// };
-
-// export default connect(mapStateToProps, { deleteFriend })(Friend);
